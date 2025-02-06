@@ -289,11 +289,14 @@ body .section-hero {
 
 @media only screen and (max-width: 50em) {
   body .section-hero {
-    background-image: url("https://vfitclub.netlify.app/image/hero-image.png"),
-      url("https://vfitclub.netlify.app/image/hero-background.webp");
+    /* background-image: url("https://vfitclub.netlify.app/image/hero-image.png"), */
+      /* url("https://vfitclub.netlify.app/image/hero-background.webp"); */
     background-position: bottom, center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+  .logo{
+    display: none;
   }
 }
 
@@ -1267,3 +1270,67 @@ body .offerModal .modal-content div {
   }
 }
 /*# sourceMappingURL=main.css.map */
+
+/* Modal background */
+.membershipModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);  /* Apply blur effect to the background */
+  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent dark overlay */
+  color: white; /* Make text white for contrast */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.membershipModal .modal-content {
+  background-color: #222; /* Darker content area */
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  text-align: center;
+}
+
+/* Style the form to stand out against the black background */
+#membershipForm {
+  background-color: #333;  /* Dark background for the form */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.membershipModal input,
+.membershipModal button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.membershipModal .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.membershipModal .close-button {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the radio buttons to appear side by side */
+#membershipForm .radio-group {
+  display: flex;
+  gap: 10px; /* Space between radio buttons */
+  align-items: center; /* Vertically align the radio buttons */
+}
+
+/* Optional: Style the individual radio buttons */
+#membershipForm input[type="radio"] {
+  margin: 0;  /* Remove any default margin */
+}

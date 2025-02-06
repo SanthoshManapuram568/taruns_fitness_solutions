@@ -131,11 +131,12 @@
                 <li>Training Instruction</li>
               </ul>
             </div>
-            <a href="#contact">Get Started</a>
+            <a href="#" class="get-started-link" data-membership="3Months">Get Started</a>
           </div>
+          
           <div class="class" data-aos="flip-up">
             <h2 class="class-name">6 Months</h2>
-            <div class="class-price">₹5000 INR</div>
+            <div class="class-price">₹9000 INR</div>
             <hr />
             <div class="class-name">
               <ul>
@@ -146,11 +147,12 @@
                 <li>Training Instruction</li>
               </ul>
             </div>
-            <a href="#contact">Get Started</a>
+            <a href="#" class="get-started-link" data-membership="6Months">Get Started</a>
           </div>
+          
           <div class="class" data-aos="flip-right">
             <h2 class="class-name">1 Whole Year</h2>
-            <div class="class-price">₹5000 INR</div>
+            <div class="class-price">₹18000 INR</div>
             <hr />
             <div class="class-name">
               <ul>
@@ -161,12 +163,44 @@
                 <li>Training Instruction</li>
               </ul>
             </div>
-            <a href="#contact">Get Started</a>
-          </div>
+            <a href="#" class="get-started-link" data-membership="OneYear">Get Started</a>
+          </div>          
         </div>
       </div>
     </section>
     <section class="section-reviews" id="reviews">
+      <div class="container reviews">
+        <h2 class="title">Customer Reviews</h2>
+    
+        <button id="submitReviewBtn">Submit a Review</button>
+    
+        <!-- Hidden Review Form -->
+        <form id="reviewForm" style="display: none; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; margin: 20px auto; text-align: center;">
+          <div id="reviewSuccessMsg" style="display: none; color: green;">Your review has been submitted!</div>
+          <input type="text" id="reviewName" placeholder="Your Name" required 
+            style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+        
+          <!-- Custom File Input Container -->
+          <label for="reviewPhoto" 
+            style="display: block; width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #000; border-radius: 5px; background: #5e5c5c; text-align: center; cursor: pointer;">
+            <span id="fileLabel">Choose a Photo</span>
+            <input type="file" id="reviewPhoto" accept="image/*" required style="display: none;" />
+          </label>
+        
+          <textarea id="reviewText" placeholder="Write your review (max 500 characters)" maxlength="500" required 
+            style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; height: 100px;"></textarea>
+          
+          <button type="submit" 
+            style="background: #28a745; color: white; border: none; padding: 10px; font-size: 16px; cursor: pointer; width: 100%; border-radius: 5px;">
+            Submit
+          </button>
+        </form>    
+        <div class="review" id="reviewList"></div>
+      </div>
+    </section>
+    
+    
+    <!-- <section class="section-reviews" id="reviews">
       <div class="container reviews">
         <h2 class="title">Customer Reviews</h2>
         <div class="review">
@@ -199,19 +233,20 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section class="section-contact" id="contact">
       <div class="container contact">
         <div class="contactus">
-          <form>
+          <img src="assets/tarungym.jpg" alt="navigation icon" class="nav-hamburger" width="700" height="400" style="--i: 0" data-aos="fade-down-right" />
+          <!-- <form id="contactForm">
             <h2 class="title">GET IN TOUCH</h2>
             <div class="class-input"><input type="text" placeholder="Name" /></div>
             <div class="class-input"><input type="email" placeholder="Email" /></div>
 
             <div class="class-input"><input type="number" placeholder="Number" /></div>
             <div class="class-input"><textarea placeholder="Message"></textarea></div>
-            <button>SEND</button>
-          </form>
+            <button type="submit">SEND</button>
+          </form> -->
         </div>
         <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.148096140329!2d81.09057566956615!3d16.71946084882542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3614d2b2076515%3A0xac10a579d6b378cc!2sTFS%20GYM%20-Tarun&#39;s%20fitness%20solutions!5e0!3m2!1sen!2sin!4v1738759809687!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
@@ -272,8 +307,46 @@
       <div><button>Unlock 70% Off</button><button class="close-button">Maybe Later</button></div>
     </div>
   </div>
+
+<!-- Modal for form -->
+<div id="membershipModal" class="membershipModal">
+  <div class="modal-content">
+    <h2>Join Our Membership</h2>
+    <form id="membershipForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contacts" name="contact" required />
+
+      <div class="radio-group">
+        <label>
+          <input type="radio" id="threeMonths" name="membership" value="3Months" /> 3 Months
+        </label>
+        <label>
+          <input type="radio" id="sixMonths" name="membership" value="6Months" /> 6 Months
+        </label>
+        <label>
+          <input type="radio" id="oneYear" name="membership" value="OneYear" /> 1 Year
+        </label>
+      </div>
+      <div class="buttons">
+        <!-- <button type="button" class="connectButton">Get Connected</button> -->
+        <button type="submit" class="payButton">Get Connected</button>
+      </div>
+    </form>
+    <button class="close-button" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+
   <script src="./index.js"></script>
   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script>
     AOS.init({
       offset: 120,
