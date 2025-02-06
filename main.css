@@ -1084,15 +1084,18 @@ body .offerModal {
   animation: movemodel 0.5s forwards;
   -webkit-animation-delay: 1.5s;
   animation-delay: 1.5s;
-  opacity: block;
+  
+  opacity: 1;
   position: fixed;
   background-color: red;
   padding: 35px 35px;
-  right: -80%;
+  
+  left: 50%;
   top: 50%;
   width: 420px;
-  -webkit-transform: translate(50%, -50%);
-  transform: translate(50%, -50%);
+  max-width: 90vw; /* Ensures it fits on mobile screens */
+  
+  transform: translate(-50%, -50%);
   z-index: 15;
   background: rgba(255, 252, 252, 0.14);
   border-radius: 16px;
@@ -1100,34 +1103,32 @@ body .offerModal {
   -webkit-backdrop-filter: blur(10px);
 }
 
-@media only screen and (max-width: 50em) {
+/* Centering properly for smaller screens */
+@media only screen and (max-width: 768px) {
   body .offerModal {
-    display: none;
+    width: 90vw;
+    max-width: 350px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
 body .offerModal .modal-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   align-items: center;
 }
 
 body .offerModal .modal-content h2 {
-  font-size: 35px;
+  font-size: 25px; /* Reduced size for better fit */
+  text-align: center;
 }
 
 body .offerModal .modal-content p {
-  font-size: 15px;
+  font-size: 14px;
+  text-align: center;
 }
 
 body .offerModal .modal-content h1 {
@@ -1138,8 +1139,6 @@ body .offerModal .modal-content h1 {
 body .offerModal .modal-content button {
   width: 180px;
   height: 40px;
-  -webkit-clip-path: none;
-  clip-path: none;
 }
 
 body .offerModal .modal-content .close-button {
@@ -1155,10 +1154,9 @@ body .offerModal .modal-content .close-button:hover {
 body .offerModal .modal-content div {
   margin-top: 10px;
   gap: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
+
 
 [data-aos="image-rotateIn"] {
   -webkit-transform: rotate(360deg) scale(0.5);
@@ -1333,4 +1331,26 @@ body .offerModal .modal-content div {
 /* Optional: Style the individual radio buttons */
 #membershipForm input[type="radio"] {
   margin: 0;  /* Remove any default margin */
+}
+
+.glow-text {
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
+  animation: glowing 1.5s infinite alternate;
+}
+
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px rgb(228, 228, 151), 0 0 15px rgb(228, 228, 151), 0 0 20px rgb(228, 228, 151), 0 0 25px rgb(228, 228, 151);
+    color: #fff;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px rgb(228, 228, 151), 0 0 30px rgb(228, 228, 151), 0 0 40px rgb(228, 228, 151), 0 0 50px rgb(228, 228, 151);
+    color: rgb(228, 228, 151);
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px rgb(228, 228, 151), 0 0 15px rgb(228, 228, 151), 0 0 20px rgb(228, 228, 151), 0 0 25px rgb(228, 228, 151);
+    color: #fff;
+  }
 }

@@ -170,12 +170,12 @@
     </section>
     <section class="section-reviews" id="reviews">
       <div class="container reviews">
-        <h2 class="title">Customer Reviews</h2>
+        <h2 class="title">Customer Reviews<button class="title" id="submitReviewBtn">Submit a Review</button></h2>
     
-        <button id="submitReviewBtn">Submit a Review</button>
+        
     
         <!-- Hidden Review Form -->
-        <form id="reviewForm" style="display: none; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; margin: 20px auto; text-align: center;">
+        <form id="reviewForm" style="display: none; background: black; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; margin: 20px auto; text-align: center;">
           <div id="reviewSuccessMsg" style="display: none; color: green;">Your review has been submitted!</div>
           <input type="text" id="reviewName" placeholder="Your Name" required 
             style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;" />
@@ -191,7 +191,7 @@
             style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; height: 100px;"></textarea>
           
           <button type="submit" 
-            style="background: #28a745; color: white; border: none; padding: 10px; font-size: 16px; cursor: pointer; width: 100%; border-radius: 5px;">
+            style="background: yellow; color: black; border: none; padding: 10px; font-size: 16px; cursor: pointer; width: 100%; border-radius: 5px;">
             Submit
           </button>
         </form>    
@@ -261,11 +261,30 @@
             Dmart Road, Opp. Chinna Sivalayam, Pathebadha road, <br />Eluru, 534002
         </div>
         <div class="contact-social-links">
-          <img src="assets/whatsapp.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
-          <img src="assets/facebook.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" /> 
-          <img src="assets/instagram.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" /> 
-          <img src="assets/twitter.svg" alt="navigation icon" class="nav-hamburger" width="35" height="35" />
-        </div>
+          <!-- WhatsApp - Green -->
+          <img src="assets/whatsapp.svg" alt="WhatsApp icon" class="nav-hamburger" width="35" height="35" 
+               style="transition: 0.3s; filter: brightness(1);"
+               onmouseover="this.style.filter='brightness(0) saturate(100%) invert(41%) sepia(97%) saturate(778%) hue-rotate(90deg) brightness(100%) contrast(101%)'"
+               onmouseout="this.style.filter='brightness(1)'"/>
+        
+          <!-- Facebook - Blue -->
+          <img src="assets/facebook.svg" alt="Facebook icon" class="nav-hamburger" width="35" height="35" 
+               style="transition: 0.3s; filter: brightness(1);"
+               onmouseover="this.style.filter='brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(691%) hue-rotate(180deg) brightness(98%) contrast(101%)'"
+               onmouseout="this.style.filter='brightness(1)'"/>
+        
+          <!-- Instagram - Pink -->
+          <img src="assets/instagram.svg" alt="Instagram icon" class="nav-hamburger" width="35" height="35" 
+               style="transition: 0.3s; filter: brightness(1);"
+               onmouseover="this.style.filter='brightness(0) saturate(100%) invert(50%) sepia(98%) saturate(578%) hue-rotate(300deg) brightness(102%) contrast(102%)'"
+               onmouseout="this.style.filter='brightness(1)'"/>
+        
+          <!-- Twitter - Blue -->
+          <img src="assets/twitter.svg" alt="Twitter icon" class="nav-hamburger" width="35" height="35" 
+               style="transition: 0.3s; filter: brightness(1);"
+               onmouseover="this.style.filter='brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(691%) hue-rotate(180deg) brightness(98%) contrast(101%)'"
+               onmouseout="this.style.filter='brightness(1)'"/>
+        </div>        
       </div>
       <nav class="footer-nav" aria-label="navigation">
         <h3>Quick Links</h3>
@@ -289,13 +308,13 @@
       </nav>
       <div class="newsletter">
         <h3>Get Updates</h3>
-        <input type="email" placeholder="email@domain.com" /><button>&#10003;</button>
+        <input type="email" placeholder="email@domain.com" required /><button>&#10003;</button>
       </div>
     </div>
     <hr />
     <div class="container copyrights">
-      <div>Copyright © by Santhosh Kumar Manapuram</div>
-      <a href="https://github.com/SanthoshManapuram568/taruns_fitness_solutions" target="_blank"><img src="assets/github.svg" alt="navigation icon" class="nav-hamburger" width="50" height="50" /></a>
+      <div>Developed by <a href="https://www.instagram.com/santhosh_manapuram" target="_blank" class="glow-text">SANTHOSH MANAPURAM</a></div>
+      <a href="https://github.com/SanthoshManapuram568/taruns_fitness_solutions" target="_blank"><img src="assets/github.svg" alt="navigation icon" class="nav-hamburger" width="30" height="30" /></a>
     </div>
   </footer>
   <div id="offerModal" class="offerModal">
